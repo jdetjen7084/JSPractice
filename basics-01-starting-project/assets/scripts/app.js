@@ -1,8 +1,16 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-currentResult = (currentResult + 10) * 3 / 2 - 1;
+function getUserInput() {
+    return parseInt(userInput.value)
+}
 
-let calculationDescription = `(${defaultResult} + 10) * 3 / 2 - 1`;
+function add() {
+    const enteredNumber = getUserInput();
+    const calcDescription = `${currentResult} + ${enteredNumber}`
+    currentResult = currentResult + enteredNumber;
+    outputResult(currentResult, calcDescription);
+}
 
-outputResult(currentResult, calculationDescription);
+addBtn.addEventListener("click", add);
+
